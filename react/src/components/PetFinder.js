@@ -102,8 +102,9 @@ class PetFinder extends Component {
   //유기동물 날짜로 검색해주는 메서드
   findAbandonmentPublic = async () => {
     let JWT = sessionStorage.getItem('Authorization');
-    //jwt없으면 로그인하라고 로그인페이지로 보낸다!
-    if (JWTService.checkLogin(JWT) === false) {
+    //요청전에 토큰 유효성 검사
+    let tokenResult = JWTService.validateUser(JWT);
+    if (tokenResult != null) {
       return;
     }
     //기존에 데이터가있으면 새로 랜더링 하도록 초기화
@@ -115,8 +116,6 @@ class PetFinder extends Component {
       alert('검색일을 입력해주세요');
       return;
     }
-    //요청전에 토큰 유효성 검사
-    JWTService.validateUser(JWT);
     //api 데이터 요청
     let URL = `http://localhost:8080/abandonmentPublic?bgnde=${this.state.bgnde}&endde=${this.state.endde}&pageNo=${this.state.pageNo}`;
     let res = await axios.default.get(URL, { headers: { Authorization: JWT } }).catch((err) => {
