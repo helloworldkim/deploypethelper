@@ -117,7 +117,7 @@ class PetFinder extends Component {
       return;
     }
     //api 데이터 요청
-    let URL = `http://localhost:8080/abandonmentPublic?bgnde=${this.state.bgnde}&endde=${this.state.endde}&pageNo=${this.state.pageNo}`;
+    let URL = `http://15.164.214.226:8080/abandonmentPublic?bgnde=${this.state.bgnde}&endde=${this.state.endde}&pageNo=${this.state.pageNo}`;
     let res = await axios.default.get(URL, { headers: { Authorization: JWT } }).catch((err) => {
       console.log(err);
     });
