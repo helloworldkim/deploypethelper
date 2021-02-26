@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BOARD_URL = 'http://localhost:8080/board'; //spring boot 접속 url
+const BOARD_URL = 'http://15.164.214.226:8080/board'; //spring boot 접속 url
 
 class BoardApiService {
   //게시글 작성에 사용되는 메서드

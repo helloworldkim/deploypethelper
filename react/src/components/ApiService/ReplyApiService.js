@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const REPLY_URL = 'http://localhost:8080/reply'; //spring boot 접속 url
+const REPLY_URL = 'http://15.164.214.226:8080/reply'; //spring boot 접속 url
 
 class ReplyApiService {
   //게시판글에 달린 댓글을 불러오는 메서드
