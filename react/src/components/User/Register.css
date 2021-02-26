@@ -1,0 +1,19 @@
+.paper {
+    margin-top: 8;
+    display: 'flex';
+    flex-direction: column;
+    align-items: center;
+}
+.avatar{
+    margin: 1;
+    background-color: #dc004e;
+}
+.submit{
+    margin: 3 0 2;
+}
+.titleBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
