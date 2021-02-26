@@ -29,7 +29,7 @@ class PetFinder extends Component {
   }
 
   findSido = async () => {
-    let res = await axios.default.get('http://localhost:8080/sido').catch((err) => {
+    let res = await axios.default.get('http://15.164.214.226:8080/sido').catch((err) => {
       console.log(err);
     });
     const result = res.data.response.body.items.item;
@@ -42,7 +42,7 @@ class PetFinder extends Component {
     }
     // console.log("orgCd값:", orgCd);
     let res = await axios.default
-      .get('http://localhost:8080/sigungu?orgCd=' + orgCd)
+      .get('http://15.164.214.226:8080/sigungu?orgCd=' + orgCd)
       .catch((err) => {
         console.log(err);
       });
@@ -57,7 +57,7 @@ class PetFinder extends Component {
     // console.log("uprCd값:", uprCd);
     // console.log("orgCd값:", orgCd);
     let res = await axios.default
-      .get('http://localhost:8080/shelter?orgCd=' + orgCd + '&uprCd=' + uprCd)
+      .get('http://15.164.214.226:8080/shelter?orgCd=' + orgCd + '&uprCd=' + uprCd)
       .catch((err) => {
         console.log(err);
       });
@@ -84,7 +84,7 @@ class PetFinder extends Component {
 
   findPet = async (code) => {
     let res = await axios.default
-      .get('http://localhost:8080/kindofpet?up_kind_cd=' + code)
+      .get('http://15.164.214.226:8080/kindofpet?up_kind_cd=' + code)
       .catch((err) => {
         console.log(err);
       });
